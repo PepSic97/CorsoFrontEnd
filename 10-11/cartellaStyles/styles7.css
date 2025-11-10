@@ -20,7 +20,7 @@
     }
 
     main {
-      margin-top: 70px; /* spazio per header fisso */
+      margin-top: 70px;
       display: flex;
       padding: 10px;
     }
