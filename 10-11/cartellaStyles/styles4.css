@@ -1,14 +1,14 @@
 #first {
   padding: 20px;
-  background-color: lightblue;
+  background-color: blue;
 }
 
 #second {
   padding: 10px 15px;
-  background-color: lightgreen;
+  background-color: green;
 }
 
 #third {
   padding: 5px 10px 15px;
-  background-color: lightcoral;
+  background-color: red;
 }
