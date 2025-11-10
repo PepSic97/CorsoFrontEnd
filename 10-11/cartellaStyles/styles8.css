@@ -1,0 +1,13 @@
+    .container {
+      width: 200px;
+      height: 100px;
+      border: 2px solid black;
+      margin: 20px;
+      padding: 5px;
+      font-family: Arial;
+    }
+
+    #visible { overflow: visible; background-color: red; }
+    #hidden { overflow: hidden; background-color: blue; }
+    #scroll { overflow: scroll; background-color: green; }
+    #auto { overflow: auto; background-color: yellow; }
