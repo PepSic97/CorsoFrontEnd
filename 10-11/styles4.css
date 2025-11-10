@@ -1,0 +1,14 @@
+#first {
+  padding: 20px;
+  background-color: lightblue;
+}
+
+#second {
+  padding: 10px 15px;
+  background-color: lightgreen;
+}
+
+#third {
+  padding: 5px 10px 15px;
+  background-color: lightcoral;
+}

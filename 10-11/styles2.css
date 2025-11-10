@@ -1,0 +1,28 @@
+    h1 {
+      border-width: 4px;
+      border-style: dashed;
+      border-color: red;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    p {
+      border-width: 5px;
+      border-style: outset;
+      border-color: blue;
+    }
+    ul {
+        border-width: 8px;
+        border-style: inset;
+        border-color: orange;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    li {
+      border-width: 10px;
+      border-style: hidden;
+      border-color: green;
+      margin-top: 10px;
+      margin-right: 25px;
+      margin-bottom: 10px;
+      margin-left: 25px;
+    }

@@ -1,0 +1,17 @@
+    div {
+      width: 200px;
+      height: 100px;
+      padding: 20px;
+      border: 5px solid blue;
+      box-sizing: content-box;
+      background-color: lightgray;
+      margin-bottom: 200px;
+    }
+    p {
+      width: 200px;
+      height: 100px;
+      padding: 20px;
+      border: 5px solid green;
+      box-sizing: border-box;
+      background-color: lightyellow;
+    }
