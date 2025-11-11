@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+}
+
+header {
+  background: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.left {
+  background: red;
+  padding: 1rem;
+}
+
+.right {
+  background: blue;
+  padding: 1rem;
+}
+
+main {
+  background: yellow;
+  padding: 1rem;
+}
+
+footer {
+  background: gray;
+  padding: 1rem;
+  text-align: center;
+}
