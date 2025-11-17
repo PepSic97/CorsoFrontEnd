@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head><title>Calcolatrice</title></head>
-  <body>
+  <link rel="stylesheet" href="styles.css">
+<body>
+  <div class="calcolatrice">
     <h1>Calcolatrice</h1>
     <p>Scegli quale operazione eseguire</p>
     <input id="n1" type="number" placeholder="Numero 1"/>
@@ -16,8 +18,9 @@
 
     <p id="risultato"></p>
 
-    <button onclick="resetta()">Resetta</button>
-    <script src="script.js"></script>
-  </body>
+    <button id="reset" onclick="resetta()">Resetta</button>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
 
