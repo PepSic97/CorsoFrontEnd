@@ -4,21 +4,18 @@ function calcola(tipo) {
   switch (tipo) {
     case 1:
       risultato = n1 + n2;
-      document.getElementById("risultato").textContent = "Risultato: " + risultato;
       break;
     case 2:
       risultato = n1 - n2;
-      document.getElementById("risultato").textContent = "Risultato: " + risultato;
       break;  
     case 3:
       risultato = n1 * n2;
-      document.getElementById("risultato").textContent = "Risultato: " + risultato;
       break;
     case 4:
       risultato = n1 / n2;
-      document.getElementById("risultato").textContent = "Risultato: " + risultato;
       break;
-    }   
+    } 
+  document.getElementById("risultato").textContent = "Risultato: " + risultato;
 }
 
 function resetta() {
