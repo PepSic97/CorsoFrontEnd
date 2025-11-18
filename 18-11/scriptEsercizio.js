@@ -30,4 +30,8 @@ console.log("Figli diretti di #contenuto:", figliDiretti);
 
 // Trovo fratello successivo (se esiste)
 const fratelloSuccessivo = figliDiretti.nextElementSibling;
-console.log("Fratello successivo di #contenuto:", fratelloSuccessivo);
+if (fratelloSuccessivo) {
+    console.log("Fratello successivo di #contenuto:", fratelloSuccessivo);}
+    else {
+    console.log("Non ha un fratello successivo.");
+}
