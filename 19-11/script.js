@@ -4,6 +4,7 @@ const list = document.querySelector('.list');
 const messagge = document.querySelector('#messagge');
 const deleteBtn = document.querySelector('#deleteBtn');
 const completed = document.querySelector('#completed');
+const notCompleted = document.querySelector('#notCompleted');
 const showAll = document.querySelector('#showAll');
 
 function aggiornaMessaggio() {
@@ -95,6 +96,26 @@ completed.addEventListener('click', function () {
   } else {
     messagge.textContent = '';
   }
+});
+
+notCompleted.addEventListener('click', function () {
+  const elementi = list.querySelectorAll('li');
+  let nonCompletate = 0;
+
+  elementi.forEach(li => {
+    if (!li.classList.contains('completata')) {
+      li.classList.remove('nascosto');
+      nonCompletate++;
+    } else {
+      li.classList.add('nascosto');
+    }
+
+    if (nonCompletate === 0) { 
+        messagge.textContent = 'Hai completato tutte le attività!';
+    } else {
+        messagge.textContent = '';
+    }
+  });
 });
 
 showAll.addEventListener('click', function () {
