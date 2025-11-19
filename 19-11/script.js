@@ -11,6 +11,9 @@ function aggiornaMessaggio() {
   const totale = list.querySelectorAll('li').length;
   const completate = list.querySelectorAll('li.completata').length;
 
+  document.querySelector('#buttons').style.display =
+    totale === 0 ? 'none' : 'block';
+
   if (totale === 0) {
     messagge.textContent = 'Nessuna attività inserita';
   } else if (completate === 0) {
@@ -19,6 +22,8 @@ function aggiornaMessaggio() {
     messagge.textContent = '';
   }
 }
+
+
 
 function aggiungiAttivita() {
   const testoVal = input.value.trim();
