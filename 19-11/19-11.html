@@ -7,17 +7,17 @@
 </head>
 <body>
   <h1>Lista delle attività</h1>
-
-  <input type="text" id="inputAttivita" placeholder="Aggiungi attività..." />
-  <button id="aggiungiBtn">Aggiungi</button>
-  <button id="svuotaBtn">Svuota lista</button>
-  <button id="filtraCompletate">Mostra solo completate</button>
-  <button id="mostraTutte">Mostra tutte</button>
-
-  <p id="messaggio">Nessuna attività inserita</p>
-
-  <ul class="lista"></ul>
-
+  <input type="text" id="input" placeholder="Aggiungi attività" required />
+  <button id="addBtn">Aggiungi</button>
+  <br>
+  <br>
+  <div>
+    <button id="deleteBtn">Svuota lista</button>
+    <button id="completed">Mostra solo completate</button>
+    <button id="showAll">Mostra tutte</button>
+  </div>
+  <p id="messagge">Nessuna attività inserita</p>
+  <ul class="list"></ul>
   <script src="script.js"></script>
 </body>
 </html>

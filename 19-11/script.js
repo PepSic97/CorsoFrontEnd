@@ -1,14 +1,22 @@
-const input = document.querySelector('#inputAttivita');
-const aggiungiBtn = document.querySelector('#aggiungiBtn');
-const lista = document.querySelector('.lista');
-const messaggio = document.querySelector('#messaggio');
-const svuotaBtn = document.querySelector('#svuotaBtn');
-const filtraCompletate = document.querySelector('#filtraCompletate');
-const mostraTutte = document.querySelector('#mostraTutte');
+const input = document.querySelector('#input');
+const addBtn = document.querySelector('#addBtn');
+const list = document.querySelector('.list');
+const messagge = document.querySelector('#messagge');
+const deleteBtn = document.querySelector('#deleteBtn');
+const completed = document.querySelector('#completed');
+const showAll = document.querySelector('#showAll');
 
 function aggiornaMessaggio() {
-  const totale = lista.querySelectorAll('li').length;
-  messaggio.textContent = totale === 0 ? 'Nessuna attività inserita' : '';
+  const totale = list.querySelectorAll('li').length;
+  const completate = list.querySelectorAll('li.completata').length;
+
+  if (totale === 0) {
+    messagge.textContent = 'Nessuna attività inserita';
+  } else if (completate === 0) {
+    messagge.textContent = '';
+  } else {
+    messagge.textContent = '';
+  }
 }
 
 function aggiungiAttivita() {
@@ -17,24 +25,30 @@ function aggiungiAttivita() {
 
   const li = document.createElement('li');
 
+  const checkboxCell = document.createElement('div');
+  checkboxCell.className = 'checkbox-cell';
   const checkbox = document.createElement('input');
   checkbox.type = 'checkbox';
   checkbox.className = 'check-completata';
+  checkboxCell.appendChild(checkbox);
 
+  const testoCell = document.createElement('div');
+  testoCell.className = 'testo-cell';
   const span = document.createElement('span');
   span.className = 'testo';
   span.textContent = testoVal;
+  testoCell.appendChild(span);
 
+  const removeCell = document.createElement('div');
+  removeCell.className = 'remove-cell';
   const removeBtn = document.createElement('button');
   removeBtn.className = 'remove';
   removeBtn.textContent = 'Rimuovi';
+  removeCell.appendChild(removeBtn);
 
   checkbox.addEventListener('change', function () {
-    if (checkbox.checked) {
-      li.classList.add('completata');
-    } else {
-      li.classList.remove('completata');
-    }
+    li.classList.toggle('completata', checkbox.checked);
+    aggiornaMessaggio();
   });
 
   span.addEventListener('click', function () {
@@ -42,42 +56,55 @@ function aggiungiAttivita() {
     checkbox.dispatchEvent(new Event('change'));
   });
 
-  li.addEventListener('dblclick', function (e) {
-    if (e.target.tagName !== 'BUTTON') {
-      li.classList.toggle('evidenziata');
-    }
+  removeBtn.addEventListener('click', function () {
+    li.remove();
+    aggiornaMessaggio();
   });
 
- 
+  li.appendChild(checkboxCell);
+  li.appendChild(testoCell);
+  li.appendChild(removeCell);
 
-  li.appendChild(checkbox);
-  li.appendChild(span);
-
-  lista.appendChild(li);
-
+  list.appendChild(li);
   input.value = '';
   aggiornaMessaggio();
 }
 
-aggiungiBtn.addEventListener('click', aggiungiAttivita);
+addBtn.addEventListener('click', aggiungiAttivita);
 
-svuotaBtn.addEventListener('click', function () {
-  lista.innerHTML = '';
+deleteBtn.addEventListener('click', function () {
+  list.innerHTML = '';
   aggiornaMessaggio();
 });
 
-filtraCompletate.addEventListener('click', function () {
-  const elementi = lista.querySelectorAll('li');
+completed.addEventListener('click', function () {
+  const elementi = list.querySelectorAll('li');
+  let completate = 0;
+
   elementi.forEach(li => {
-    if (!li.classList.contains('completata')) {
-      li.classList.add('nascosto');
-    } else {
+    if (li.classList.contains('completata')) {
       li.classList.remove('nascosto');
+      completate++;
+    } else {
+      li.classList.add('nascosto');
     }
   });
+
+  if (completate === 0) {
+    messagge.textContent = 'Non ci sono attività completate da mostrare';
+  } else {
+    messagge.textContent = '';
+  }
 });
 
-mostraTutte.addEventListener('click', function () {
-  const elementi = lista.querySelectorAll('li');
-  elementi.forEach(li => li.classList.remove('nascosto'));
+showAll.addEventListener('click', function () {
+  const elementi = list.querySelectorAll('li');
+
+  elementi.forEach(li => {
+    li.classList.remove('nascosto');
+    li.style.display = 'flex';
+  });
+
+  messagge.textContent = '';
+  aggiornaMessaggio();
 });
