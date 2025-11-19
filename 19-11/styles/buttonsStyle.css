@@ -1,0 +1,30 @@
+button {
+  padding: 10px 14px;
+  margin: 4px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid gray;
+}
+
+button.remove {
+  background: red;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+button.remove:hover {
+  background: lightcoral;
+}
+
+#addBtn {
+  background-color: blue;
+  color: white;
+}
+
+#buttons {
+  display: none;
+}

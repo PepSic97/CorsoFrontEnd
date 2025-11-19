@@ -1,0 +1,12 @@
+@media (max-width: 600px) {
+  ul.list {
+    max-width: 90%;
+  }
+  li .testo-cell {
+    font-size: 0.9rem;
+  }
+  input, button {
+    width: 90%;
+    margin: 4px 0;
+  }
+}

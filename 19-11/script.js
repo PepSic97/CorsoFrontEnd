@@ -1,13 +1,13 @@
 const input = document.querySelector('#input');
 const addBtn = document.querySelector('#addBtn');
 const list = document.querySelector('.list');
-const messagge = document.querySelector('#messagge');
+const message = document.querySelector('#message');
 const deleteBtn = document.querySelector('#deleteBtn');
 const completed = document.querySelector('#completed');
 const notCompleted = document.querySelector('#notCompleted');
 const showAll = document.querySelector('#showAll');
 
-function aggiornaMessaggio() {
+function updateMessage() {
   const totale = list.querySelectorAll('li').length;
   const completate = list.querySelectorAll('li.completata').length;
 
@@ -15,19 +15,32 @@ function aggiornaMessaggio() {
     totale === 0 ? 'none' : 'block';
 
   if (totale === 0) {
-    messagge.textContent = 'Nessuna attività inserita';
+    message.textContent = 'Nessuna attività inserita';
   } else if (completate === 0) {
-    messagge.textContent = '';
+    message.textContent = '';
   } else {
-    messagge.textContent = '';
+    message.textContent = '';
   }
 }
 
 
 
-function aggiungiAttivita() {
+function addActivity() {
   const testoVal = input.value.trim();
-  if (testoVal === '') return;
+  const errorInput = document.querySelector('#errorInput');
+
+  if (testoVal === '') {
+    input.classList.add('error');
+    errorInput.style.display = 'inline';
+    setTimeout(() => {
+      input.classList.remove('error');
+      errorInput.style.display = 'none';
+    }, 1000);
+    return;
+  }
+  errorInput.style.display = 'none';
+  input.classList.remove('error');
+
 
   const li = document.createElement('li');
 
@@ -54,7 +67,7 @@ function aggiungiAttivita() {
 
   checkbox.addEventListener('change', function () {
     li.classList.toggle('completata', checkbox.checked);
-    aggiornaMessaggio();
+    updateMessage();
   });
 
   span.addEventListener('click', function () {
@@ -64,7 +77,7 @@ function aggiungiAttivita() {
 
   removeBtn.addEventListener('click', function () {
     li.remove();
-    aggiornaMessaggio();
+    updateMessage();
   });
 
   li.appendChild(checkboxCell);
@@ -73,14 +86,14 @@ function aggiungiAttivita() {
 
   list.appendChild(li);
   input.value = '';
-  aggiornaMessaggio();
+  updateMessage();
 }
 
-addBtn.addEventListener('click', aggiungiAttivita);
+addBtn.addEventListener('click', addActivity);
 
 deleteBtn.addEventListener('click', function () {
   list.innerHTML = '';
-  aggiornaMessaggio();
+  updateMessage();
 });
 
 completed.addEventListener('click', function () {
@@ -97,9 +110,9 @@ completed.addEventListener('click', function () {
   });
 
   if (completate === 0) {
-    messagge.textContent = 'Non ci sono attività completate da mostrare';
+    message.textContent = 'Non ci sono attività completate da mostrare';
   } else {
-    messagge.textContent = '';
+    message.textContent = '';
   }
 });
 
@@ -116,9 +129,9 @@ notCompleted.addEventListener('click', function () {
     }
 
     if (nonCompletate === 0) { 
-        messagge.textContent = 'Hai completato tutte le attività!';
+        message.textContent = 'Hai completato tutte le attività!';
     } else {
-        messagge.textContent = '';
+        message.textContent = '';
     }
   });
 });
@@ -131,6 +144,6 @@ showAll.addEventListener('click', function () {
     li.style.display = 'flex';
   });
 
-  messagge.textContent = '';
-  aggiornaMessaggio();
+  message.textContent = '';
+  updateMessage();
 });

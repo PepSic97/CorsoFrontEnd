@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <title>To-Do List</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/styles/style.css" />
+  <link rel="stylesheet" href="/styles/buttonsStyle.css" />
+  <link rel="stylesheet" href="/styles/listStyle.css" />
+  <link rel="stylesheet" href="/styles/mediaStyle.css" />
+  <link rel="stylesheet" href="/styles/inputStyle.css" />
+  <link rel="stylesheet" href="/styles/messageStyle.css" />
 </head>
 <body>
   <h1>Cosa bisogna fare oggi?</h1>
   <input type="text" id="input" placeholder="Aggiungi attività" required />
+  <span id="errorInput" class="message-error" style="display:none;">Inserisci un'attività</span>
   <button id="addBtn">Aggiungi</button>
   <br>
   <br>
@@ -17,7 +23,7 @@
     <button id="notCompleted">Cosa devi fare?</button>
     <button id="showAll">Mostra tutte</button>
   </div>
-  <p id="messagge">Nessuna attività inserita</p>
+  <p id="message">Nessuna attività inserita</p>
   <ul class="list"></ul>
   <script src="script.js"></script>
 </body>

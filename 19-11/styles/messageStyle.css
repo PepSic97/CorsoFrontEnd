@@ -1,0 +1,11 @@
+#message {
+  font-size: 1.2rem;
+  color: grey;
+  margin-top: 20px;
+}
+
+.message-error {
+  color: red;
+  font-size: 0.9rem;
+  margin-left: 8px;
+}
