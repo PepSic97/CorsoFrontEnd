@@ -1,6 +1,8 @@
 # Catalogo Prodotti Interattivo
 
-Questa applicazione web mostra un catalogo di prodotti interattivo con funzionalità di carrello laterale fisso. Gli utenti possono:
+Questa applicazione web mostra un catalogo di prodotti interattivo con un carrello laterale fisso.
+
+Com'è composta e cosa si può fare:
 
 1. [Catalogo prodotti](#catalogo-prodotti)
 
@@ -35,6 +37,20 @@ L’utente può filtrare i prodotti usando:
 
 - Dropdown categorie ```#categoryFilter```
 
+
+I prodotti sono tutti mockati e messi in app
+
+```js
+
+const productCatalog = [
+  { id: 1, name: "Quaderni", category: "cancelleria", price: 10, imageUrl: "https://m.media-amazon.com/images/I/61gLF+PUCML._AC_SL1500_.jpg" },
+  { id: 2, name: "Penne", category: "cancelleria", price: 2, imageUrl: "https://m.media-amazon.com/images/I/71wwSBtdcsL._AC_SL1500_.jpg" },
+  { id: 3, name: "Zaino", category: "zaini", price: 30, imageUrl: "https://m.media-amazon.com/images/I/71TrNZRQbdL._AC_SL1463_.jpg" },
+  { id: 4, name: "Matite", category: "cancelleria", price: 1, imageUrl: "https://m.media-amazon.com/images/I/81qxJ-PgGLL._AC_SL1500_.jpg" },
+  { id: 5, name: "Tracolla", category: "zaini", price: 45, imageUrl: "https://m.media-amazon.com/images/I/81BKIbjZizL._AC_SY625_.jpg" }
+];
+
+```
 ## Aggiungere prodotti al carrello
 
 Al click sul pulsante Aggiungi al carrello, viene chiamata la funzione ```addToCart(event)```
