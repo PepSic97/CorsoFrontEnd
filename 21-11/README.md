@@ -19,7 +19,7 @@ Questa applicazione web mostra un catalogo di prodotti interattivo con funzional
 
 ## Catalogo prodotti
 
-Il catalogo viene generato dinamicamente usando la funzione ``` showCatalog()```
+Il catalogo viene generato dinamicamente usando la funzione ```showCatalog()```
 
 Ogni prodotto è rappresentato con:
 
@@ -31,20 +31,20 @@ Ogni prodotto è rappresentato con:
 
 L’utente può filtrare i prodotti usando:
 
-- Campo di ricerca per nome ``` #search```
+- Campo di ricerca per nome ```#search```
 
-- Dropdown categorie ``` #categoryFilter```
+- Dropdown categorie ```#categoryFilter```
 
 ## Aggiungere prodotti al carrello
 
-Al click sul pulsante Aggiungi al carrello, viene chiamata la funzione ``` addToCart(event)```
+Al click sul pulsante Aggiungi al carrello, viene chiamata la funzione ```addToCart(event)```
 
 Se il prodotto è già presente nel carrello, la quantità viene incrementata, se non è presente, viene aggiunto con quantità iniziale 1.
 
 Dopo ogni aggiunta, si aggiornano:
 
-- Il carrello ``` updateCart() ```
-- Il totale ``` updateTotal() ```
+- Il carrello ```updateCart()```
+- Il totale ```updateTotal()```
 
 ## Layout del carrello
 
@@ -64,20 +64,20 @@ Elimina completamente il prodotto dal carrello.
 
 ## Modificare la quantità dal carrello
 
-Con le funzioni ``` increaseQty(event)``` e ``` decreaseQty(event)```, + e - gestiscono l’aumento o la diminuzione della quantità.
+Con le funzioni ```increaseQty(event)``` e ```decreaseQty(event)```, + e - gestiscono l’aumento o la diminuzione della quantità.
 Se la quantità diventa 0, il prodotto viene rimosso dal carrello.
 
 ## Rimuovere singoli prodotti
 
-Il pulsante Rimuovi chiama ``` removeFromCart(event)``` per eliminare l’elemento dal carrello.
+Il pulsante Rimuovi chiama ```removeFromCart(event)``` per eliminare l’elemento dal carrello.
 Dopo ogni rimozione, carrello e totale vengono aggiornati.
 
 ## Svuotare il Carrello
 
-Il pulsante Pulisci carrello chiama ``` clearCart()```
+Il pulsante Pulisci carrello chiama `` clearCart()```
 Tutti i prodotti vengono rimossi e il totale azzerato.
 
 ## Calcolo Totale
 
-La funzione ``` updateTotal()``` somma il prezzo di ogni prodotto moltiplicato per la quantità.
+La funzione ```updateTotal()``` somma il prezzo di ogni prodotto moltiplicato per la quantità.
 Il totale aggiornato viene mostrato nella parte inferiore del carrello.
