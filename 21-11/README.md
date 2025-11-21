@@ -2,13 +2,19 @@
 
 Questa applicazione web mostra un catalogo di prodotti interattivo con funzionalità di carrello laterale fisso. Gli utenti possono:
 
-[Catalogo prodotti](#catalogo-prodotti)
-[Aggiungere prodotti al carrello](#aggiungere-prodotti-al-carrello)
-[Layout del carrello](#layout-del-carrello)
-[Modificare la quantità dal carrello](#modificare-la-quantità-dal-carrello)
-[Rimuovere singoli prodotti](#rimozione-singoli-prodotti)
-[Svuotare il carrello](#svuotare-il-carrello)
-[Calcolo totale](#calcolo-totale)
+1. [Catalogo prodotti](#catalogo-prodotti)
+
+2. [Aggiungere prodotti al carrello](#aggiungere-prodotti-al-carrello)
+
+3. [Layout del carrello](#layout-del-carrello)
+
+4. [Modificare la quantità dal carrello](#modificare-la-quantità-dal-carrello)
+
+5. [Rimuovere singoli prodotti](#rimozione-singoli-prodotti)
+
+6. [Svuotare il carrello](#svuotare-il-carrello)
+
+7. [Calcolo totale](#calcolo-totale)
 
 
 
