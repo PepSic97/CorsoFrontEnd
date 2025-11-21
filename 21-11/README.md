@@ -52,20 +52,24 @@ Il carrello è sempre visibile a destra, con layout chiaro e verticale per ogni 
 
 Ogni card prodotto nel carrello mostra:
 
-- IMMAGINE — PREZZO
-- QUANTITÀ
-- [+  -](#più-e-meno)
+- Immagine — Prezzo
+- Quantità
+- [più e meno](#più-e-meno)
+<br>
 Modificano la quantità direttamente dal carrello.
 
-- RIMUOVI
+- [Rimuovi](#rimuovi)
+<br>
 Elimina completamente il prodotto dal carrello.
 
 ## Modificare la quantità dal carrello
+## più e meno 
 
-Con le funzioni ``` increaseQty(event)``` e ``` decreaseQty(event)``` ## più-e-meno gestiscono l’aumento o la diminuzione della quantità.
+Con le funzioni ``` increaseQty(event)``` e ``` decreaseQty(event)```, + e - gestiscono l’aumento o la diminuzione della quantità.
 Se la quantità diventa 0, il prodotto viene rimosso dal carrello.
 
 ## Rimuovere singoli prodotti
+## Rimuovi
 
 Il pulsante Rimuovi chiama ``` removeFromCart(event)``` per eliminare l’elemento dal carrello.
 Dopo ogni rimozione, carrello e totale vengono aggiornati.
