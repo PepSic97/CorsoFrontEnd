@@ -74,7 +74,7 @@ Dopo ogni rimozione, carrello e totale vengono aggiornati.
 
 ## Svuotare il Carrello
 
-Il pulsante Pulisci carrello chiama `` clearCart()```
+Il pulsante Pulisci carrello chiama ```clearCart()```
 Tutti i prodotti vengono rimossi e il totale azzerato.
 
 ## Calcolo Totale
