@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catalogo Prodotti</title>
+    <!-- Styles -->
+  <link rel="stylesheet" href="/styles/styleGeneral.css" />
+  <link rel="stylesheet" href="/styles/styleCart.css" />
+  <link rel="stylesheet" href="/styles/styleControls.css" />
+  <link rel="stylesheet" href="/styles/styleProduct.css" />
+  <link rel="stylesheet" href="/styles/styleResponsive.css" />
+</head>
+<body>
+  <header>
+    <h1>Catalogo Prodotti</h1>
+    <div class="controls">
+      <input type="text" id="search" placeholder="Inizia ad acquistare" />
+      <select id="categoryFilter">
+        <option value="all">Tutte le categorie</option>
+        <option value="cancelleria">Cancelleria</option>
+        <option value="zaini">Zaini</option>
+      </select>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section id="catalog" class="catalog"></section>
+
+    <aside id="cartSidebar" class="cart-sidebar">
+      <h2>Carrello</h2>
+      <section id="cart"></section>
+
+      <div class="cart-footer">
+        <h3>Totale: <span id="total">0</span> €</h3>
+        <div class="cart-actions">
+          <button id="clearCart">Pulisci carrello</button>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Scripts -->
+  
+  <script src="/scripts/scriptAddCart.js"></script>
+  <script src="/scripts/scriptCatalog.js"></script>
+  <script src="/scripts/scriptClearCart.js"></script>
+  <script src="/scripts/scriptDOMEvents.js"></script>
+  <script src="/scripts/scriptRemove.js"></script>
+  <script src="/scripts/scriptsIncreaseDecrease.js"></script>
+  <script src="/scripts/scriptUpdateCart.js"></script>
+  <script src="/scripts/scriptUpdateTotal.js"></script>
+</body>
+</html>
