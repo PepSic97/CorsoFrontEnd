@@ -1,35 +1,104 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState, useEffect } from "react";
+import TodoForm from "./components/TodoForm";
+import TodoList from "./components/TodoList";
+import FilterGroup from "./components/FilterGroup";
+import sun from "./assets/sun.jpg";
+import moon from "./assets/moon.jpg";
 
-function App() {
-  const [count, setCount] = useState(0)
+
+
+const STORAGE_KEY = "todo-atomic-v1";
+
+export default function App() {
+  const [todos, setTodos] = useState(() => {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch {
+      return [];
+    }
+  });
+  const [filter, setFilter] = useState("all"); // all | active | completed
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "light";
+  });
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
+  }, [todos]);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  // helpers
+  const addTodo = (text) => {
+    if (!text.trim()) return;
+    const newTodo = {
+      id: Date.now().toString(),
+      text: text.trim(),
+      completed: false,
+      createdAt: new Date().toISOString(),
+    };
+    setTodos((t) => [newTodo, ...t]);
+  };
+
+  const updateTodo = (id, patch) => {
+    setTodos((list) => list.map((t) => (t.id === id ? { ...t, ...patch } : t)));
+  };
+
+  const deleteTodo = (id) => setTodos((list) => list.filter((t) => t.id !== id));
+
+  const filtered = todos.filter((t) => {
+    if (filter === "active") return !t.completed;
+    if (filter === "completed") return t.completed;
+    return true;
+  });
+
+  const remaining = todos.filter((t) => !t.completed).length;
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="app">
+      <div className="header">
+        <div>
+          <div className="title">ToDo List Avanzata</div>
+          <div style={{ color: "var(--muted)", fontSize: 13, marginTop: 6 }}>
+            La tua nuova lista con React 
+          </div>
+        </div>
 
-export default App
+        <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+          <button
+            className="btn ghost"
+            onClick={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
+            title="Toggle theme"
+            aria-label="toggle theme"
+          >
+            <img 
+            src={theme === "dark" ? sun : moon} 
+            alt="toggle theme icon"
+            style={{ width: 24, height: 24 }}
+            />
+          </button>
+        </div>
+      </div>
+
+      <div className="card">
+        <TodoForm onAdd={addTodo} />
+        <div style={{ marginTop: 12, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <FilterGroup filter={filter} setFilter={setFilter} />
+          <div style={{ color: "var(--muted)", fontWeight: 700 }}>{todos.length} totale</div>
+        </div>
+
+        <TodoList
+          todos={filtered}
+          onToggle={(id, completed) => updateTodo(id, { completed })}
+          onDelete={deleteTodo}
+          onUpdateText={(id, text) => updateTodo(id, { text })}
+          remaining={remaining}
+        />
+      </div>
+    </div>
+  );
+}
