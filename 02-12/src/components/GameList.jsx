@@ -6,7 +6,6 @@ export default function GameList({ games }) {
     <div className="game-list">
       {games.map((g) => (
         <div key={g.id} className="game-card">
-          {/* immagine */}
           <div className="cover-wrap">
             <img src={g.coverUrl} alt={g.title} className="game-cover" />
           </div>

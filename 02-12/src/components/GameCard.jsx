@@ -2,23 +2,23 @@ import React, { useState } from "react";
 import "./GameCard.css";
 
 function ratingColor(r) {
-  if (r >= 8.5) return "#3b82f6"; // blu primario
-  if (r >= 6) return "#f7d14b"; // giallo
-  return "#ff6b6b"; // rosso
+  if (r >= 8.5) return blue;
+  if (r >= 6) return yellow;
+  return red;
 }
 
 function statusBadge(status) {
   switch (status) {
     case "completato":
-      return { label: "Completato", color: "#3b82f6" };
+      return { label: "Completato", color: blue };
     case "in-corso":
-      return { label: "In Corso", color: "#f7d14b" };
+      return { label: "In Corso", color: yellow };
     case "wishlist":
-      return { label: "Wishlist", color: "#4ecdc4" };
+      return { label: "Wishlist", color: green };
     case "abbandonato":
-      return { label: "Abbandonato", color: "#7a7a7a" };
+      return { label: "Abbandonato", color: gray };
     default:
-      return { label: status, color: "#888" };
+      return { label: status, color: gray };
   }
 }
 

@@ -2,7 +2,6 @@ import React, { useMemo } from "react";
 import "./GameFilters.css";
 
 const GameFilters = ({ games = [], filters, setFilters }) => {
-  // 🔒 Safety check
   const safeGames = Array.isArray(games) ? games : [];
 
   const genres = useMemo(() => {
