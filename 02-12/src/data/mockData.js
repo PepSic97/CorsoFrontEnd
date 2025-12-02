@@ -1,3 +1,13 @@
+import witcher3 from "../assets/theWitcherThree.png";
+import cyberpunk from "../assets/cyberpunk.png";
+import fifa from "../assets/fifa24.png";
+import codmw2 from "../assets/codmw2.png";
+import superMario from "../assets/superMario.png";
+import tloz from "../assets/tloz.png";
+import fortnite from "../assets/fortnite.png";
+import minecraft from "../assets/minecraft.png";
+import apex from "../assets/apex.png";
+
 export const gamesData = [
   {
     id: 1,
@@ -10,7 +20,7 @@ export const gamesData = [
     status: "completato",
     hoursPlayed: 150,
     difficulty: "Medio",
-    coverUrl: "https://picsum.photos/300/400?random=1",
+    coverUrl: witcher3,
   },
   {
     id: 2,
@@ -23,7 +33,7 @@ export const gamesData = [
     status: "in-corso",
     hoursPlayed: 40,
     difficulty: "Medio",
-    coverUrl: "https://picsum.photos/300/400?random=2",
+    coverUrl: cyberpunk,
   },
   {
     id: 3,
@@ -36,7 +46,7 @@ export const gamesData = [
     status: "completato",
     hoursPlayed: 120,
     difficulty: "Facile",
-    coverUrl: "https://picsum.photos/300/400?random=3",
+    coverUrl: fifa,
   },
   {
     id: 4,
@@ -49,7 +59,7 @@ export const gamesData = [
     status: "in-corso",
     hoursPlayed: 55,
     difficulty: "Medio",
-    coverUrl: "https://picsum.photos/300/400?random=4",
+    coverUrl: codmw2,
   },
   {
     id: 5,
@@ -62,7 +72,7 @@ export const gamesData = [
     status: "completato",
     hoursPlayed: 80,
     difficulty: "Medio",
-    coverUrl: "https://picsum.photos/300/400?random=5",
+    coverUrl: superMario,
   },
   {
     id: 6,
@@ -75,7 +85,7 @@ export const gamesData = [
     status: "wishlist",
     hoursPlayed: 0,
     difficulty: "Difficile",
-    coverUrl: "https://picsum.photos/300/400?random=6",
+    coverUrl: tloz,
   },
   {
     id: 7,
@@ -88,7 +98,7 @@ export const gamesData = [
     status: "abbandonato",
     hoursPlayed: 20,
     difficulty: "Medio",
-    coverUrl: "https://picsum.photos/300/400?random=7",
+    coverUrl: fortnite,
   },
   {
     id: 8,
@@ -101,7 +111,7 @@ export const gamesData = [
     status: "completato",
     hoursPlayed: 300,
     difficulty: "Facile",
-    coverUrl: "https://picsum.photos/300/400?random=8",
+    coverUrl: minecraft,
   },
   {
     id: 9,
@@ -114,6 +124,6 @@ export const gamesData = [
     status: "in-corso",
     hoursPlayed: 75,
     difficulty: "Difficile",
-    coverUrl: "https://picsum.photos/300/400?random=9",
+    coverUrl: apex,
   },
 ];

@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import "./GameCard.css";
 
 function ratingColor(r) {
-  if (r >= 8.5) return "var(--accent)";
-  if (r >= 6) return "#f7d14b"; // yellow
-  return "var(--warning)"; // red
+  if (r >= 8.5) return "#3b82f6"; // blu primario
+  if (r >= 6) return "#f7d14b"; // giallo
+  return "#ff6b6b"; // rosso
 }
 
 function statusBadge(status) {
   switch (status) {
     case "completato":
-      return { label: "Completato", color: "var(--accent)" };
+      return { label: "Completato", color: "#3b82f6" };
     case "in-corso":
       return { label: "In Corso", color: "#f7d14b" };
     case "wishlist":
@@ -25,10 +25,11 @@ function statusBadge(status) {
 export default function GameCard({ game }) {
   const [open, setOpen] = useState(false);
   const badge = statusBadge(game.status);
+
   return (
     <div className="game-card" onClick={() => setOpen((o) => !o)}>
       <div className="cover-wrap">
-        <img src={game.coverUrl} alt={game.title} className="cover-img" />
+        <img src={game.coverUrl} alt={game.title} className="game-cover" />
         <div
           className="rating"
           style={{ borderColor: ratingColor(game.rating) }}
