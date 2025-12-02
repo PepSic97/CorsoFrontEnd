@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app.light {
+  background: #ffffff;
+  color: #000;
+}
+
+.app.dark {
+  background: #1a1a1a;
+  color: #f1f1f1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: 22px;
+}
+
+.container {
+  padding: 20px;
+}
+
+.card {
+  background: rgba(200, 200, 200, 0.2);
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn.danger {
+  background: #d9534f;
+  color: white;
+}
+
+.btn.success {
+  background: #28a745;
+  color: white;
+}
+
+.btn.warn {
+  background: #ffc107;
+  color: black;
+}
+
+.login-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  background: #007bff;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.dashboard {
+  display: flex;
+  gap: 20px;
+}
+
+.left {
+  width: 40%;
+}
+
+.right {
+  width: 60%;
+}
+
+.pre {
+  background: rgba(120, 120, 120, 0.2);
+  padding: 10px;
+  border-radius: 8px;
+}
