@@ -1,0 +1,28 @@
+:root {
+  --bg: wheat;
+  --card-bg: white;
+  --border: white;
+  --text: black;
+  --text-muted: brown;
+  --primary: blue;
+  --primary-light: white;
+  --radius: 10px;
+}
+
+body {
+  background: wheat;
+  color: white;
+  font-family: "Arial", sans-serif;
+  margin: 0;
+}
+
+.container {
+  width: 95%;
+  max-width: 1400px;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.app-layout {
+  padding: 20px 0;
+}

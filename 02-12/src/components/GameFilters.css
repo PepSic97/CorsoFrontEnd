@@ -1,0 +1,35 @@
+.filters-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  padding: 15px;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.filters-box label {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.filters-box select,
+.filters-box input[type="number"] {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid;
+  background: white;
+}
+
+.filters-box select:focus,
+.filters-box input[type="number"]:focus {
+  border-color: black;
+  outline: none;
+  background: wheat;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

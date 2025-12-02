@@ -1,0 +1,25 @@
+.navigation {
+  display: flex;
+  gap: 10px;
+  padding: 12px 0;
+}
+
+.navigation button {
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid black;
+  background: wheat;
+  cursor: pointer;
+  transition: 0.2s;
+  color: black;
+}
+
+.navigation button:hover {
+  background: wheat;
+}
+
+.navigation .active {
+  background: wheat;
+  color: white;
+  border-color: black;
+}

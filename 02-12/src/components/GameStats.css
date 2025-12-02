@@ -1,0 +1,21 @@
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.stat {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+.stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: black;
+}
+.stat-label {
+  font-size: 12px;
+  color: darkgray;
+  margin-top: 6px;
+}
